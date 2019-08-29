@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PhoneBookModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CategoryTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GroupTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LocationTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Location_Lat" Type="decimal" Precision="9" Scale="6" />
+    <Property Name="Location_Lat1" Type="decimal" Precision="9" Scale="6" />
+    <Property Name="Address" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="PersonsGroupTbl">
+    <Key>
+      <PropertyRef Name="GroupId" />
+      <PropertyRef Name="PersonId" />
+    </Key>
+    <Property Name="GroupId" Type="int" Nullable="false" />
+    <Property Name="PersonId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersonTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Family" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PhoneNumberTbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonId" Type="int" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="LocationId" Type="int" Nullable="false" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_PersonsGroupTbl_GroupTbl">
+    <End Role="GroupTbl" Type="Self.GroupTbl" Multiplicity="1" />
+    <End Role="PersonsGroupTbl" Type="Self.PersonsGroupTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupTbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonsGroupTbl">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonsGroupTbl_PersonTbl">
+    <End Role="PersonTbl" Type="Self.PersonTbl" Multiplicity="1" />
+    <End Role="PersonsGroupTbl" Type="Self.PersonsGroupTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PersonTbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonsGroupTbl">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhoneNumberTbl_CategoryTbl">
+    <End Role="CategoryTbl" Type="Self.CategoryTbl" Multiplicity="1" />
+    <End Role="PhoneNumberTbl" Type="Self.PhoneNumberTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryTbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PhoneNumberTbl">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhoneNumberTbl_LocationTbl">
+    <End Role="LocationTbl" Type="Self.LocationTbl" Multiplicity="1" />
+    <End Role="PhoneNumberTbl" Type="Self.PhoneNumberTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocationTbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PhoneNumberTbl">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhoneNumberTbl_PersonTbl">
+    <End Role="PersonTbl" Type="Self.PersonTbl" Multiplicity="1" />
+    <End Role="PhoneNumberTbl" Type="Self.PhoneNumberTbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PersonTbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PhoneNumberTbl">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PhoneBookModelStoreContainer">
+    <EntitySet Name="CategoryTbl" EntityType="Self.CategoryTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupTbl" EntityType="Self.GroupTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LocationTbl" EntityType="Self.LocationTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonsGroupTbl" EntityType="Self.PersonsGroupTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonTbl" EntityType="Self.PersonTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhoneNumberTbl" EntityType="Self.PhoneNumberTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_PersonsGroupTbl_GroupTbl" Association="Self.FK_PersonsGroupTbl_GroupTbl">
+      <End Role="GroupTbl" EntitySet="GroupTbl" />
+      <End Role="PersonsGroupTbl" EntitySet="PersonsGroupTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonsGroupTbl_PersonTbl" Association="Self.FK_PersonsGroupTbl_PersonTbl">
+      <End Role="PersonTbl" EntitySet="PersonTbl" />
+      <End Role="PersonsGroupTbl" EntitySet="PersonsGroupTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhoneNumberTbl_CategoryTbl" Association="Self.FK_PhoneNumberTbl_CategoryTbl">
+      <End Role="CategoryTbl" EntitySet="CategoryTbl" />
+      <End Role="PhoneNumberTbl" EntitySet="PhoneNumberTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhoneNumberTbl_LocationTbl" Association="Self.FK_PhoneNumberTbl_LocationTbl">
+      <End Role="LocationTbl" EntitySet="LocationTbl" />
+      <End Role="PhoneNumberTbl" EntitySet="PhoneNumberTbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhoneNumberTbl_PersonTbl" Association="Self.FK_PhoneNumberTbl_PersonTbl">
+      <End Role="PersonTbl" EntitySet="PersonTbl" />
+      <End Role="PhoneNumberTbl" EntitySet="PhoneNumberTbl" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

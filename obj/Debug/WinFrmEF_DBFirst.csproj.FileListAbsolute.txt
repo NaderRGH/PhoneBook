@@ -1,0 +1,17 @@
+C:\Users\NN\source\repos\WinFrmEF_DBFirst\WinFrmEF_DBFirst\bin\Debug\WinFrmEF_DBFirst.exe.config
+C:\Users\NN\source\repos\WinFrmEF_DBFirst\WinFrmEF_DBFirst\bin\Debug\WinFrmEF_DBFirst.exe
+C:\Users\NN\source\repos\WinFrmEF_DBFirst\WinFrmEF_DBFirst\bin\Debug\WinFrmEF_DBFirst.pdb
+C:\Users\NN\source\repos\WinFrmEF_DBFirst\WinFrmEF_DBFirst\obj\Debug\WinFrmEF_DBFirst.csprojAssemblyReference.cache
+C:\Users\NN\source\repos\WinFrmEF_DBFirst\WinFrmEF_DBFirst\obj\Debug\WinFrmEF_DBFirst.frmMain.resources
+C:\Users\NN\source\repos\WinFrmEF_DBFirst\WinFrmEF_DBFirst\obj\Debug\WinFrmEF_DBFirst.Properties.Resources.resources
+C:\Users\NN\source\repos\WinFrmEF_DBFirst\WinFrmEF_DBFirst\obj\Debug\WinFrmEF_DBFirst.csproj.GenerateResource.cache
+C:\Users\NN\source\repos\WinFrmEF_DBFirst\WinFrmEF_DBFirst\obj\Debug\WinFrmEF_DBFirst.csproj.CoreCompileInputs.cache
+C:\Users\NN\source\repos\WinFrmEF_DBFirst\WinFrmEF_DBFirst\obj\Debug\WinFrmEF_DBFirst.exe
+C:\Users\NN\source\repos\WinFrmEF_DBFirst\WinFrmEF_DBFirst\obj\Debug\WinFrmEF_DBFirst.pdb
+C:\Users\NN\source\repos\WinFrmEF_DBFirst\WinFrmEF_DBFirst\bin\Debug\EntityFramework.dll
+C:\Users\NN\source\repos\WinFrmEF_DBFirst\WinFrmEF_DBFirst\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\NN\source\repos\WinFrmEF_DBFirst\WinFrmEF_DBFirst\bin\Debug\EntityFramework.xml
+C:\Users\NN\source\repos\WinFrmEF_DBFirst\WinFrmEF_DBFirst\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\NN\source\repos\WinFrmEF_DBFirst\WinFrmEF_DBFirst\obj\Debug\WinFrmEF_DBFirst.csproj.CopyComplete
+C:\Users\NN\source\repos\WinFrmEF_DBFirst\WinFrmEF_DBFirst\obj\Debug\WinFrmEF_DBFirst.ViewLayer.Persons.frmPerson.resources
+C:\Users\NN\source\repos\WinFrmEF_DBFirst\WinFrmEF_DBFirst\obj\Debug\WinFrmEF_DBFirst.ViewLayer.Category.frmCategory.resources
